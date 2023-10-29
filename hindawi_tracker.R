@@ -24,7 +24,7 @@ data_values<-data.frame(data=data,values=value)%>%
   select(journal, data, values,-bin_apc,-bin_apc2)%>%
   mutate(date_stamp=Sys.Date())
 
-url<-"https://github.com/pgomba/Hindawi_tracker/blob/main/data/report.csv"
+url<-"https://raw.githubusercontent.com/pgomba/Hindawi_tracker/main/data/report.csv"
 original_data<-read.csv(url(url))
 
 if (dir.exists("data")==FALSE){
