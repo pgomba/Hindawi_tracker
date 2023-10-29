@@ -25,7 +25,9 @@ data_values<-data.frame(data=data,values=value)%>%
   mutate(date_stamp=Sys.Date())
 
 url<-"https://raw.githubusercontent.com/pgomba/Hindawi_tracker/main/data/report.csv"
-original_data<-read.csv(url(url))
+original_data<-read.csv(url(url))%>%
+  mutate_all(as.character)%>%
+  mutate(date_stamp=as.Date(date_stamp))
 
 if (dir.exists("data")==FALSE){
   dir.create("data") 
