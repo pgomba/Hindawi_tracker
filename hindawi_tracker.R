@@ -27,7 +27,9 @@ data_values<-data.frame(data=data,values=value)%>%
 url<-"https://github.com/pgomba/Hindawi_tracker/blob/main/data/report.csv"
 original_data<-read.csv(url(url))
 
-dir.create("data") 
+if (dir.exists("data")==FALSE){
+  dir.create("data") 
+}
 
 data_values<-bind_rows(original_data,data_values)
 
