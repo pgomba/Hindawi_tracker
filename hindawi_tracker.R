@@ -5,15 +5,15 @@ library(rvest)
 hindawi_journals<-read_html("https://www.hindawi.com/journals/")
 
 journal_title<-hindawi_journals%>%
-  html_nodes(".sc-gzOgki")%>%
+  html_nodes(".sc-eXEjpC")%>%
   html_text2()
 
 data<-hindawi_journals%>%
-  html_nodes(".sc-hwwEjo")%>%
+  html_nodes(".sc-RefOD")%>%
   html_text2()
 
 value<-hindawi_journals%>%
-  html_nodes(".sc-kPVwWT")%>%
+  html_nodes(".sc-iQKALj")%>%
   html_text2()
 
 data_values<-data.frame(data=data,values=value)%>%
