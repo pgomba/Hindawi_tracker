@@ -1,7 +1,7 @@
 library(tidyverse)
 library(rvest)
 
-
+### feb update
 hindawi_journals<-read_html("https://www.hindawi.com/journals/")
 
 journal_title<-hindawi_journals%>%
